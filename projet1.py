@@ -13,6 +13,8 @@ if response.ok:
 
     code = soup.find("td")
 
+    title = soup.find("h1")
+
 
 
 
