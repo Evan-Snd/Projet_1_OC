@@ -27,6 +27,8 @@ if response.ok:
 
     category = soup.findAll("li")[2]
 
+    image_url = soup.find("img")["src"]
+
 
 
 
