@@ -25,6 +25,8 @@ if response.ok:
 
     description = soup.findAll("p")[3]
 
+    category = soup.findAll("li")[2]
+
 
 
 
