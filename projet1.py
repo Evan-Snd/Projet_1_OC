@@ -29,6 +29,10 @@ if response.ok:
 
     image_url = soup.find("img")["src"]
 
+    with open('projet1.csv', 'w', newline='') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+
+
 
 
 
