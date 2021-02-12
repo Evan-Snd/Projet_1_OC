@@ -19,6 +19,8 @@ if response.ok:
 
     price_incl_tax = soup.findAll("td")[3]
 
+    number_available = soup.findAll("td")[5]
+
 
 
 
