@@ -15,6 +15,8 @@ if response.ok:
 
     title = soup.find("h1")
 
+    price_exclu_tax = soup.findAll("td")[2]
+
 
 
 
