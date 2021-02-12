@@ -31,6 +31,9 @@ if response.ok:
 
     with open('projet1.csv', 'w', newline='') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        spamwriter.writerow(Liste)
+        spamwriter.writerow([code.text, title.text, price_exclu_tax.text[1:], price_incl_tax.text[1:], number_available.text, number_reviews.text, description.text, category.text[1:-1], "http://books.toscrape.com" + image_url[5:]])
+
 
 
 
