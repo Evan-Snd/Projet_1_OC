@@ -21,6 +21,8 @@ if response.ok:
 
     number_available = soup.findAll("td")[5]
 
+    number_reviews = soup.findAll("td")[6]
+
 
 
 
