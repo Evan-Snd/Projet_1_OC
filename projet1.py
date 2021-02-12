@@ -23,6 +23,8 @@ if response.ok:
 
     number_reviews = soup.findAll("td")[6]
 
+    description = soup.findAll("p")[3]
+
 
 
 
