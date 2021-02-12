@@ -17,6 +17,8 @@ if response.ok:
 
     price_exclu_tax = soup.findAll("td")[2]
 
+    price_incl_tax = soup.findAll("td")[3]
+
 
 
 
