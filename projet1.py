@@ -18,28 +18,27 @@ if response.ok:
         lien = a['href']
         liste.append("http://books.toscrape.com/catalogue" + lien[8:])
 
+if soup.findAll("li", {"class": "next"}):
+    nxt = soup.findAll("li", {"class": "next"})
+    for li in nxt:
+        b = li.find('a')
+        lien2 = b['href']
 
-nxt = soup.findAll("li", {"class": "next"})
-for li in nxt:
-    b = li.find('a')
-    lien2 = b['href']
-
-url = url[0:-10] + lien2
-print(url)
+    url = url[0:-10] + lien2
 
 
-for i in range (2,8):
-    nv_url = url[0:-6] + str(i) + '.html'
+    for i in range(2, 8):
+        nv_url = url[0:-6] + str(i) + '.html'
 
-    response2 = requests.get(nv_url)
+        response2 = requests.get(nv_url)
 
-    if response2.ok:
-        soup = BeautifulSoup(response2.text, features="html.parser")
-        href = soup.findAll("div", {"class": "image_container"})
-        for div in href:
-            a = div.find('a')
-            lien = a['href']
-            liste.append("http://books.toscrape.com/catalogue" + lien[8:])
+        if response2.ok:
+            soup = BeautifulSoup(response2.text, features="html.parser")
+            href = soup.findAll("div", {"class": "image_container"})
+            for div in href:
+                a = div.find('a')
+                lien = a['href']
+                liste.append("http://books.toscrape.com/catalogue" + lien[8:])
 
 with open('urls.txt', 'w') as file:
     for link in liste:
