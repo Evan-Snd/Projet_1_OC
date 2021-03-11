@@ -78,6 +78,8 @@ def obtention_des_liens_autre_pages(url):
                 global nv_url
                 nv_url = url[0:-6] + str(i) + '.html'                                                                                       # Nouvel URL = ancien en remplacant le numéro de page par i
                 recuperation_lien_page(nv_url)
+    del liste_url_livres[1000:]
+
 
 # Création et écriture dans le fichier csv des informations souhaités pour chaque URL enregistré dans le fichier txt
 
