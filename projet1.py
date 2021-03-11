@@ -135,3 +135,11 @@ def creation_ecriture_fichier_csv_donnees_souhaitees_et_telechargement_image():
                     spamwriter.writerow([code.text, title.text, price_exclu_tax.text[1:], price_incl_tax.text[1:], number_available.text, number_reviews.text, category.text[1:-1], "http://books.toscrape.com" + image_url[5:], url, descriptionProduit])
 
                 urllib.request.urlretrieve(urlImage, cheminDossier + '\\' + titreImg)
+
+recuperation_liens_categories()
+ecrire_dans_un_fichier_texte('urls_categorie.txt', liste_url_categorie)
+acceder_url('urls_categorie.txt', 'file')
+recuperation_lien_page(url2)
+obtention_des_liens_autre_pages(url2)
+ecrire_dans_un_fichier_texte('urls_livres.txt', liste_url_livres)
+creation_ecriture_fichier_csv_donnees_souhaitees_et_telechargement_image()
