@@ -13,13 +13,21 @@ review rating
 image url
 This project also recovers the image of the product by downloading it.
 
+# Install package
+
+pip install -requirements.txt
+
 # Create the folder
 
 Before lunch the code, you need to change the path of the folder where you want to save the data ( Line 118, variable cheminDossier )
 
+# Create environment (GitBash)
+
+virtualenv nomEnv
+
 # Activate environment (GitBash)
 
-for windows : ". env1/Scripts/Activate"
+for windows : ". nomEnv/Scripts/Activate" or ". nomEnv/Scripts/activate"
 
 # Lunch project
 
