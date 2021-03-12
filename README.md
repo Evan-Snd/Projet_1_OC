@@ -13,10 +13,14 @@ review rating
 image url
 This project also recovers the image of the product by downloading it.
 
-# Activate environment
+# Create the folder
 
-for windows : ". env1/Scripts/Activate" in git bash
+Before lunch the code, you need to change the path of the folder where you want to save the data ( Line 118, variable cheminDossier )
+
+# Activate environment (GitBash)
+
+for windows : ". env1/Scripts/Activate"
 
 # Lunch project
 
-"python projet1.py" in git bash 
+"python projet1.py" (GitBash)
