@@ -6,7 +6,7 @@ import os
 
 liste_url_categorie = []
 liste_url_livres = []
-
+Liste = ['UPC', 'Titre', 'Prix exclu taxe', 'Prix inclu taxe', 'Nombre dispo', 'Nombre reviews', 'Catégorie', 'URL image', 'URL produit', 'Description' ]
 
 # Récupération des liens des catégorie dans un fichier txt
 
@@ -85,6 +85,7 @@ def obtention_des_liens_autre_pages(url):
 # Création et écriture dans le fichier csv des informations souhaités pour chaque URL enregistré dans le fichier txt
 
 def creation_ecriture_fichier_csv_donnees_souhaitees_et_telechargement_image():
+    old_cheminDossier = ''
     with open('urls_livres.txt', 'r') as file2:                                                     # Lecture du fichier txt
         for row in file2:                                                                           # Pour chaque row dans le fichier
             url = row.strip()                                                                       # URL prends la valeur de row
@@ -136,11 +137,15 @@ def creation_ecriture_fichier_csv_donnees_souhaitees_et_telechargement_image():
                 with open(cheminDossier + '\\' + file_name, 'a', newline='',
                           encoding='utf-16') as csvfile:                                                                  # Ecriture dans le fichier csv des données récupérés
                     spamwriter = csv.writer(csvfile, delimiter='\t', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    if cheminDossier != old_cheminDossier:
+                        spamwriter.writerow(Liste)
                     spamwriter.writerow([code.text, title.text, price_exclu_tax.text[1:], price_incl_tax.text[1:],
                                          number_available.text, number_reviews.text, category.text[1:-1],
                                          "http://books.toscrape.com" + image_url[5:], url, descriptionProduit])
 
                 urllib.request.urlretrieve(urlImage, cheminDossier + '\\' + titreImg)                                     # Télécharchement et enregistrement des images
+
+                old_cheminDossier = cheminDossier
 
 
 recuperation_liens_categories()

@@ -13,22 +13,27 @@ review rating
 image url
 This project also recovers the image of the product by downloading it.
 
+# Intro
+
+Create a folder and put all the file (projet1.py, README, requirement.txt) in this folder. 
+
 # Install package
 
 pip install -requirements.txt
 
-# Create the folder
+# Change the path of the folder in the code
 
-Before lunch the code, you need to change the path of the folder where you want to save the data ( Line 118, variable cheminDossier )
+Before launch the code, you need to change the path of the folder where you want to save the data ( Line 118, variable cheminDossier )
 
 # Create environment (GitBash)
 
+cd path_folder ( Go to the desired folder )
 virtualenv nomEnv
 
 # Activate environment (GitBash)
 
 for windows : ". nomEnv/Scripts/Activate" or ". nomEnv/Scripts/activate"
 
-# Lunch project
+# Launch project
 
 "python projet1.py" (GitBash)
